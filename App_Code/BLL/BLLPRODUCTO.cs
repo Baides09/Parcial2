@@ -17,16 +17,16 @@ public class BLLPRODUCTO
     public static List<PRODUCTODTO> MostrarTodos()
     {
         List<PRODUCTODTO> ListarProducto = new List<PRODUCTODTO>();
-        ProductosDTSTableAdapters.ProductosTableAdapter adaptador = new ProductosDTSTableAdapters.ProductosTableAdapter();
-        ProductosDTS.ProductosDataTable tabla = adaptador.MostrarTodosProductos();
-        foreach(ProductosDTS.ProductosRow filas in tabla)
+        ProductosDTSTableAdapters.PRODUCTOSTableAdapter adaptador = new ProductosDTSTableAdapters.PRODUCTOSTableAdapter();
+        ProductosDTS.PRODUCTOSDataTable tabla = adaptador.MostrarProductosAll();
+        foreach(ProductosDTS.PRODUCTOSRow filas in tabla)
         {
             ListarProducto.Add(RowProductos(filas));
         }
         return ListarProducto;
     }
 
-    private static PRODUCTODTO RowProductos(ProductosDTS.ProductosRow filas)
+    private static PRODUCTODTO RowProductos(ProductosDTS.PRODUCTOSRow filas)
     {
         PRODUCTODTO objProduct = new PRODUCTODTO();
         objProduct.ID_PRODUCTO = filas.ID_PRODUCTO;
@@ -39,8 +39,8 @@ public class BLLPRODUCTO
     }
     public static PRODUCTODTO MostraTodosID(int idProduct)
     {
-        ProductosDTSTableAdapters.ProductosTableAdapter adaptador = new ProductosDTSTableAdapters.ProductosTableAdapter();
-        ProductosDTS.ProductosDataTable tabla = adaptador.MostrarProductoxID(idProduct);
+        ProductosDTSTableAdapters.PRODUCTOSTableAdapter adaptador = new ProductosDTSTableAdapters.PRODUCTOSTableAdapter();
+        ProductosDTS.PRODUCTOSDataTable tabla = adaptador.MostrarProductosxID(idProduct);
         if (tabla.Rows.Count == 0)
         {
             return null;
@@ -49,17 +49,17 @@ public class BLLPRODUCTO
     }
     public static void Insertar(int idProduct, string descr_product,int cantidad,int puCompra, int puVenta,int idDepa)
     {
-        ProductosDTSTableAdapters.ProductosTableAdapter adaptador = new ProductosDTSTableAdapters.ProductosTableAdapter();
+        ProductosDTSTableAdapters.PRODUCTOSTableAdapter adaptador = new ProductosDTSTableAdapters.PRODUCTOSTableAdapter();
         adaptador.Insert(idProduct, descr_product, cantidad, puCompra, puVenta,idDepa);
     }
     public static void Borrar(int idProduct)
     {
-        ProductosDTSTableAdapters.ProductosTableAdapter adaptador = new ProductosDTSTableAdapters.ProductosTableAdapter();
+        ProductosDTSTableAdapters.PRODUCTOSTableAdapter adaptador = new ProductosDTSTableAdapters.PRODUCTOSTableAdapter();
         adaptador.Delete(idProduct);
     }
     public static void Actualizar(int idProduct, string descr_product, int cantidad, int puCompra, int puVenta, int idDepa)
     {
-        ProductosDTSTableAdapters.ProductosTableAdapter adaptador = new ProductosDTSTableAdapters.ProductosTableAdapter();
+        ProductosDTSTableAdapters.PRODUCTOSTableAdapter adaptador = new ProductosDTSTableAdapters.PRODUCTOSTableAdapter();
         adaptador.Update(descr_product, cantidad, puCompra, puVenta, idDepa, idProduct);
     }
 }
