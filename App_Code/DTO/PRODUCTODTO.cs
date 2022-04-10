@@ -17,7 +17,7 @@ public class PRODUCTODTO
     public int ID_PRODUCTO { get; set; }
     public string DESCRI_PRODUCTO { get; set; }
     public int CANTIDAD { get; set; }
-    public float P_U_COMPRA { get; set; }
-    public float P_U_VENTA { get; set; }
+    public int P_U_COMPRA { get; set; }
+    public int P_U_VENTA { get; set; }
     public int ID_DEPARTAMENTO { get; set; }
 }

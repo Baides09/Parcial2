@@ -11,4 +11,9 @@ public partial class Template : System.Web.UI.MasterPage
     {
 
     }
+    protected void Button1_Click1(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Response.Redirect("~/login.aspx");
+    }
 }
