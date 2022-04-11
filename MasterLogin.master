@@ -8,6 +8,7 @@
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <center><IMG SRC="https://upload.wikimedia.org/wikipedia/commons/6/67/Crystal_Clear_app_Login_Manager.svg" width="250" height="150"/> </center>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
