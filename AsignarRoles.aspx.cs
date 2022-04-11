@@ -11,4 +11,25 @@ public partial class AsignarRoles : System.Web.UI.Page
     {
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        int IDRol = Convert.ToInt32(TxTIdRol.Text);
+        string NombreRol = TxTNombre.Text;
+        try
+        {
+            if (string.IsNullOrEmpty(HiddenField1.Value))
+            {
+                BLLROL.Insertar(IDRol, NombreRol);
+            }
+            else
+            {
+                BLLROL.Actualizar(IDRol, NombreRol);
+            }
+        }
+        catch(Exception ex)
+        {
+
+        }
+    }
 }

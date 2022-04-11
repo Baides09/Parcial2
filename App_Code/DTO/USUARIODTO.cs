@@ -19,4 +19,13 @@ public class USUARIODTO
     public int GRUPO { get; set; }
     public string PATERNO { get; set; }
     public string MATERNO { get; set; }
+    public bool VENTAS { get; set; }
+    public bool ADMINISTRAR { get; set; }
+    public bool REPORTES { get; set; }
+    public bool CATALOGOS { get; set; }
+    public bool CONSULTAS { get; set; }
+    public bool DESHACER_VENTAS { get; set; }
+    public bool LOGIN { get; set; }
+    public bool FACTURACION { get; set; }
+    public int ID_ROL { get; set; }
 }

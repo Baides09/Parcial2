@@ -17,8 +17,8 @@ public class BLLUSUARIO
     public static List<USUARIODTO> MostrarTodosUsuario()
     {
         List<USUARIODTO> ListarUsuario = new List<USUARIODTO>();
-        UsuarioDTSTableAdapters.UsuarioTableAdapter adaptador = new UsuarioDTSTableAdapters.USERSTableAdapter();
-        UsuarioDTS.UsuarioDataTable tabla = adaptador.MostrarUsuariosAll();
+        UsuarioDTSTableAdapters.UsuarioTableAdapter adaptador = new UsuarioDTSTableAdapters.UsuarioTableAdapter();
+        UsuarioDTS.UsuarioDataTable tabla = adaptador.MostrarUsuarioAll();
         foreach (UsuarioDTS.UsuarioRow filas in tabla)
         {
             ListarUsuario.Add(RowUser(filas));
@@ -35,10 +35,10 @@ public class BLLUSUARIO
         objUser.MATERNO = filas.MATERNO;
         return objUser;
     }
-    public static USUARIODTO MostrarTodosID(string Username)
+    public static USUARIODTO MostrarLogin(string Username,string password)
     {
         UsuarioDTSTableAdapters.UsuarioTableAdapter adaptador = new UsuarioDTSTableAdapters.UsuarioTableAdapter();
-        UsuarioDTS.UsuarioDataTable tabla = adaptador.MostrarUsuarioxID(Username);
+        UsuarioDTS.UsuarioDataTable tabla = adaptador.LoginUser(Username,password);
         if (tabla.Rows.Count == 0)
         {
             return null;
@@ -46,19 +46,19 @@ public class BLLUSUARIO
         return RowUser(tabla[0]);
     }
 
-    public static void Insertar(string userName, string userPssw,int grupo,string padre, string madre,int idRol)
+    public static void Insertar(string userName, string userPssw,int grupo,string padre, string madre,bool venta, bool admin, bool report, bool catalogo,bool consulta, bool desha_venta, bool login, bool factu,int idRol)
     {
         UsuarioDTSTableAdapters.UsuarioTableAdapter adaptador = new UsuarioDTSTableAdapters.UsuarioTableAdapter();
-        adaptador.Insert(userName,userPssw,grupo,padre,madre,idRol);
+        adaptador.Insert(userName, userPssw, grupo, padre, madre, venta, admin, report, catalogo, consulta, desha_venta, login, factu, idRol);
     }
     public static void Borrar(string userName)
     {
         UsuarioDTSTableAdapters.UsuarioTableAdapter adaptador = new UsuarioDTSTableAdapters.UsuarioTableAdapter();
         adaptador.Delete(userName);
     }
-    public static void Actualizar(string userName, string userPssw, int grupo, string padre, string madre, int idRol)
+    public static void Actualizar(string userName,string userPssw, int grupo, string padre, string madre, bool venta, bool admin, bool report, bool catalogo, bool consulta, bool desha_venta, bool login, bool factu, int idRol)
     {
         UsuarioDTSTableAdapters.UsuarioTableAdapter adaptador = new UsuarioDTSTableAdapters.UsuarioTableAdapter();
-        adaptador.Update(userPssw,grupo,padre,madre,idRol,userName);
+        adaptador.Update(userPssw, grupo, padre, madre, venta, admin, report, catalogo, consulta, desha_venta, login, factu, idRol, userName);
     }
 }

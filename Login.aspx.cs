@@ -14,6 +14,18 @@ public partial class Login : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/Principal.aspx");
+        string user = TxtUser.Text;
+        string pass = TextPass.Text;
+        USUARIODTO userautenticado = BLLUSUARIO.MostrarLogin(user, pass);
+        if (userautenticado == null)
+        {
+
+        }
+        else
+        {
+            Session["usuario"] = user;
+            Response.Redirect("~/Principal.aspx");
+        }
+        
     }
 }

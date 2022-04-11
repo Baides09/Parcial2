@@ -15,19 +15,22 @@
         <tr>
             <td class="auto-style1">ID ROL:</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxTIdRol" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">NOMBRE ROL:</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxTNombre" runat="server"></asp:TextBox>
             </td>
         </tr>
     </table>
 </p>
+    <p>
+        <asp:HiddenField ID="HiddenField1" runat="server" />
+</p>
 <p>
-    <asp:Button ID="Button1" runat="server" Text="GUARDAR" />
+    <asp:Button ID="Button1" runat="server" Text="GUARDAR" OnClick="Button1_Click" />
 </p>
 </asp:Content>
 

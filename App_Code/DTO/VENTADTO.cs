@@ -17,8 +17,7 @@ public class VENTADTO
     public int FOLIO { get; set; }
     public int ID_PRODUCTO { get; set; }
     public int CANTIDAD { get; set; }
-    public float ID_CLIENTE { get; set; }
-    public float IVA { get; set; }
+    public int ID_CLIENTE { get; set; }
     public string DESCRIPCION_VENTA { get; set; }
 
 }
