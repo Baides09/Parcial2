@@ -16,18 +16,24 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">ID ROL:</td>
+                <td class="auto-style1">ID DEPARTAMENTO:</td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server" Width="350px"></asp:TextBox>
+                    <asp:TextBox ID="TxTDepa1" runat="server" Width="350px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">NOMBRE ROL:</td>
+                <td class="auto-style1">NOMBRE DEPARTAMENTO:</td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server" Width="350px"></asp:TextBox>
+                    <asp:TextBox ID="TxTNombre" runat="server" Width="350px"></asp:TextBox>
                 </td>
             </tr>
         </table>
+    </p>
+    <p>
+        <asp:HiddenField ID="HiddenField1" runat="server" />
+    </p>
+    <p>
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Guardar" />
     </p>
 </asp:Content>
 
